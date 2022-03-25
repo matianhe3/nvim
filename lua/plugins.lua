@@ -97,6 +97,16 @@ return require('packer').startup(function(use)
     'williamboman/nvim-lsp-installer',
   }
 
+  use {
+    'windwp/nvim-autopairs',
+    config = require('cmp.autopairs')
+  }
+
+--LANG
+  use {
+    'fatih/vim-go',
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end
