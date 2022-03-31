@@ -59,6 +59,12 @@ return require('packer').startup(function(use)
     config = require('tools.filetype')
   }
 
+--EDITOR
+  use {
+    "terrortylor/nvim-comment",
+    config = require('editor.comment')
+  }
+
 --COMPLETION
   use {
     'hrsh7th/nvim-cmp'

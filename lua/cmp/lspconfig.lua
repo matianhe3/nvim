@@ -29,9 +29,6 @@ function lspconfig()
     require('lspconfig')[lsp].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-      flags = {
-        debounce_text_changes = 150,
-      }
     }
   end
 end
