@@ -23,7 +23,7 @@ function lspconfig()
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
   end
 
-  local servers = { 'pyright' }
+  local servers = { 'pyright', 'gopls' }
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
