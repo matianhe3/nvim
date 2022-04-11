@@ -1,5 +1,6 @@
-function lspconfig()
+local function lspconfig()
   local opts = { noremap=true, silent=true }
+  local vim = vim
   vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
   vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
@@ -23,13 +24,13 @@ function lspconfig()
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
   end
 
-  local servers = { 'pyright', 'gopls' }
+  local servers = { 'pyright', 'gopls', 'sumneko_lua' }
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   for _, lsp in pairs(servers) do
-    require('lspconfig')[lsp].setup {
+    require('lspconfig')[lsp].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-    }
+    })
   end
 end
 

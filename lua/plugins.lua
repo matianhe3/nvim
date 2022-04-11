@@ -24,8 +24,27 @@ return require('packer').startup(function(use)
     requires = {
       'nvim-lua/plenary.nvim'
     },
-    tag = 'release', -- To use the latest release
+    tag = 'release',
     config = require('ui.gitsigns')
+  }
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = require('ui.lualine')
+  }
+
+  use {
+    'arkav/lualine-lsp-progress'
+  }
+
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "*",
+    requires = {
+      'kyazdani42/nvim-web-devicons'
+    },
+    config = require('ui.bufferline')
   }
 
 -- TOOLS
@@ -45,14 +64,20 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope-project.nvim'
   }
-
   use {
     "nvim-telescope/telescope-frecency.nvim",
     requires = {"tami5/sqlite.lua"}
   }
 
   use {
-    "folke/which-key.nvim"
+  "folke/trouble.nvim",
+  requires = "kyazdani42/nvim-web-devicons",
+  config = require("tools.trouble")
+}
+
+  use {
+    "folke/which-key.nvim",
+    config = require("tools.whichkey")
   }
 
   use {
@@ -64,6 +89,28 @@ return require('packer').startup(function(use)
   use {
     "terrortylor/nvim-comment",
     config = require('editor.comment')
+  }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = require('editor.treesitter')
+  }
+
+  use {
+    "akinsho/toggleterm.nvim",
+    config = require('editor.toggleterm')
+  }
+
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = require('editor.colorizer')
+  }
+
+  use {
+    'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = require('editor.diffview')
   }
 
 --COMPLETION

@@ -1,4 +1,4 @@
-function nvimcmp()
+local function nvimcmp()
   local cmp = require'cmp'
   cmp.setup({
     snippet = {

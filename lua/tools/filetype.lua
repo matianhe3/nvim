@@ -1,4 +1,5 @@
-function filetype()
+local function filetype()
+  local vim = vim
   require("filetype").setup({
     overrides = {
         extensions = {

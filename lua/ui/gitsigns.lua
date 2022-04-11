@@ -1,4 +1,4 @@
-function gitsigns()
+local function gitsigns()
   require('gitsigns').setup({
   })
 end
