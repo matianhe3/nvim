@@ -5,10 +5,16 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 
+
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
 -- UI
+  use {
+    'folke/tokyonight.nvim',
+    config = require("ui.tokyonight")
+  }
+
   use 'glepnir/dashboard-nvim'
 
   use {
@@ -30,7 +36,10 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      opt = true
+    },
     config = require('ui.lualine')
   }
 
@@ -85,6 +94,12 @@ return require('packer').startup(function(use)
     config = require('tools.filetype')
   }
 
+  use {
+    'stevearc/aerial.nvim',
+    config = require('tools.aerial')
+  }
+
+
 --EDITOR
   use {
     "terrortylor/nvim-comment",
@@ -113,18 +128,11 @@ return require('packer').startup(function(use)
     config = require('editor.diffview')
   }
 
+
 --COMPLETION
   use {
     'hrsh7th/nvim-cmp',
     config = require('cmp.nvimcmp')
-  }
-
-  use {
-    'hrsh7th/cmp-nvim-lsp'
-  }
-
-  use {
-    'L3MON4D3/LuaSnip'
   }
 
   use {
@@ -148,6 +156,14 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'L3MON4D3/LuaSnip'
+  }
+
+  use {
+    'hrsh7th/cmp-nvim-lsp'
+  }
+
+  use {
     'neovim/nvim-lspconfig',
     config = require('cmp.lspconfig')
   }
@@ -156,6 +172,21 @@ return require('packer').startup(function(use)
     'williamboman/nvim-lsp-installer',
   }
 
+  use {
+    'tami5/lspsaga.nvim',
+    config = require('cmp.lspsaga')
+  }
+
+  use {
+    'RishabhRD/nvim-lsputils',
+    requires = 'RishabhRD/popfix',
+    config = require('cmp.lsputils')
+  }
+
+  use {
+    "ray-x/lsp_signature.nvim",
+    config = require('cmp.lspsignature')
+  }
   use {
     'windwp/nvim-autopairs',
     config = require('cmp.autopairs')

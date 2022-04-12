@@ -1,5 +1,5 @@
 local function lspconfig()
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap = true, silent = true }
   local vim = vim
   vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
@@ -22,6 +22,9 @@ local function lspconfig()
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+    require("aerial").on_attach(client, bufnr)
+    require("lsp_signature").on_attach(client, bufnr)
   end
 
   local servers = { 'pyright', 'gopls', 'sumneko_lua' }
