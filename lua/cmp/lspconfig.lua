@@ -27,7 +27,7 @@ local function lspconfig()
     require("lsp_signature").on_attach(client, bufnr)
   end
 
-  local servers = { 'pyright', 'gopls', 'sumneko_lua' }
+  local servers = { 'pyright', 'gopls', 'sumneko_lua', 'tsserver' }
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup({
