@@ -1,3 +1,4 @@
+-- Basic
 local vim = vim
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "utf-8"
@@ -46,5 +47,16 @@ vim.o.wildmenu = true
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.pumheight = 10
 vim.o.showtabline = 2
+
+-- Key Binding
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+local map = vim.api.nvim_set_keymap
+local opt = { noremap = true, silent = true }
+
+map("n", "<leader>t", ":Telescope<CR>", opt)
+map("n", "<leader>f", ":Telescope find_files<CR>", opt)
+map("n", "<leader>g", ":Telescope live_grep<CR>", opt)
+map("n", "<leader>c", ":Telescope commands<CR>", opt)
 
 require("plugins")
