@@ -21,7 +21,7 @@ local function bufferline()
       end,
       max_name_length = 18,
       max_prefix_length = 15,
-      tab_size = 18,
+      tab_size = 25,
       diagnostics = "nvim_lsp",
       diagnostics_update_in_insert = false,
       diagnostics_indicator = function(count, level, diagnostics_dict, context)

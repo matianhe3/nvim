@@ -39,7 +39,6 @@ vim.o.timeoutlen = 100
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
---vim.o.background = "dark"
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
 vim.o.list = true

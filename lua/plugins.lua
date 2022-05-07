@@ -99,6 +99,11 @@ return require('packer').startup(function(use)
     config = require('tools.aerial')
   }
 
+  use {
+    "akinsho/toggleterm.nvim",
+    config = require('tools.toggleterm')
+  }
+
 
 --EDITOR
   use {
@@ -110,11 +115,6 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = require('editor.treesitter')
-  }
-
-  use {
-    "akinsho/toggleterm.nvim",
-    config = require('editor.toggleterm')
   }
 
   use {
@@ -130,44 +130,6 @@ return require('packer').startup(function(use)
 
 
 --COMPLETION
-  use {
-    'hrsh7th/nvim-cmp',
-    config = require('cmp.nvimcmp')
-  }
-
-  use {
-    'saadparwaiz1/cmp_luasnip'
-  }
-
-  use {
-    'hrsh7th/cmp-nvim-lua'
-  }
-
-  use {
-    'hrsh7th/cmp-path'
-  }
-
-  use {
-    'hrsh7th/cmp-buffer'
-  }
-
-  use {
-    'hrsh7th/cmp-cmdline'
-  }
-
-  use {
-    'L3MON4D3/LuaSnip'
-  }
-
-  use {
-    'hrsh7th/cmp-nvim-lsp'
-  }
-
-  use {
-    'neovim/nvim-lspconfig',
-    config = require('cmp.lspconfig')
-  }
-
   use {
     'williamboman/nvim-lsp-installer',
   }
@@ -187,6 +149,53 @@ return require('packer').startup(function(use)
     "ray-x/lsp_signature.nvim",
     config = require('cmp.lspsignature')
   }
+
+  use {
+    'neovim/nvim-lspconfig',
+    config = require('cmp.lspconfig')
+  }
+
+  use {
+    'hrsh7th/cmp-nvim-lsp'
+  }
+
+  use {
+    'hrsh7th/cmp-buffer'
+  }
+
+  use {
+    'hrsh7th/cmp-path'
+  }
+
+  use {
+    'hrsh7th/cmp-cmdline'
+  }
+
+  use {
+    'hrsh7th/nvim-cmp',
+    config = require('cmp.nvimcmp')
+  }
+
+  use {
+    'L3MON4D3/LuaSnip'
+  }
+
+  use {
+    'saadparwaiz1/cmp_luasnip'
+  }
+
+  use {
+    'hrsh7th/cmp-nvim-lua'
+  }
+
+  use {
+    'SirVer/ultisnips'
+  }
+
+  use {
+    'quangnguyen30192/cmp-nvim-ultisnips'
+  }
+
   use {
     'windwp/nvim-autopairs',
     config = require('cmp.autopairs')
