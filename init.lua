@@ -60,5 +60,6 @@ map("n", "<leader>g", ":Telescope live_grep<CR>", opt)
 map("n", "<leader>c", ":Telescope commands<CR>", opt)
 map("n", "<leader>s", ":Telescope current_buffer_fuzzy_find<CR>", opt)
 map("n", "<F2>", ":NvimTreeToggle<CR>", opt)
+map("n", "<leader>at", ":AerialToggle<CR>", opt)
 
 require("plugins")
