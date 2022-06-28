@@ -15,8 +15,6 @@ return require('packer').startup(function(use)
     config = require("ui.tokyonight")
   }
 
-  use 'glepnir/dashboard-nvim'
-
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
